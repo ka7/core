@@ -1,0 +1,11 @@
+language: c
+
+sudo: false
+
+before_install:
+  - sudo apt-get update -qq
+
+script:
+  - ./configure
+  - make
+  - sudo make install
