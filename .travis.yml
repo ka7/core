@@ -4,8 +4,9 @@ sudo: required
 
 before_install:
   - sudo apt-get update -qq
-
+  - sudo apt-get install autoconf automake libtool pkg-config gettext pandoc make
 script:
-  - ./configure
+  - ./autogen.sh
+  - ./configure --enable-maintainer-mode
   - make
   - sudo make install
